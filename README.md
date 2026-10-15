@@ -1,16 +1,15 @@
-## Hi there 👋
+## Hi there 👋 I'm Kayla
 
-<!--
-**kayla162/kayla162** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# ⚡ 電力透視鏡 TW (GridLens TW)
 
-Here are some ideas to get you started:
+> **基於 Python、FastAPI 與 SQLite，整合 `sqlglot` 語法樹安全守門與語意過濾的 Text2SQL 系統，實現台電開放資料的中文智慧查詢與每 10 分鐘即時發電監控。**
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## 💡 專題簡介
+
+**GridLens TW** 是一個專為台灣電力開放資料設計的智慧查詢與監控系統。想查詢電力資料的人往往不會寫 SQL，而熟悉資料庫的人又難以精準掌握枯燥的公開數據。本專題透過自然語言處理與嚴謹的資安守門機制，解決了「**問得出來、答得正確、用得安心**」三大痛點：
+
+* **中文轉 SQL 與雙層守門**：使用者直接用中文提問，系統透過離線規則或 LLM 產生 SQL。並採用 `sqlglot` 進行語法樹檢查（安全守門）與語意限制過濾（語意守門），確保查詢安全且防止錯誤引導。
+* **每 10 分鐘即時發電監控**：突破台電即時資料（d006001）無法回溯的限制，透過專屬收集器自動輪詢、封存並入庫，支援完整燈號與今日出力趨勢面板。
+* **嚴謹的資料治理與語料學習**：具備四眼審核原則、資料庫原子切換與雜湊鏈稽核紀錄，確保資料異動安全可回溯。
