@@ -1,35 +1,29 @@
 ## Hi there 👋 I'm Kayla
 
-### 🛠️ 少樣本工業瑕疵檢測 — 零瑕疵標註的產線級 AOI 複判
+AI Application Developer focused on Computer Vision, AI-powered data systems, and workflow automation.
 
-* **技術核心**：
-  * **電腦視覺 (CV) 與 CNN 深度特徵提取**：運用基於預訓練 **CNN**（如 `WideResNet50-2`）的卷積特徵，結合空間局部紋理脈絡與非監督式異常檢測模型 **PatchCore**，僅需良品即可建立特徵記憶庫。
-  * **標準工業資料集驗證 (MVTec AD)**：使用 **MVTec AD** 工業異常檢測基準資料集進行全品項（如 bottle、grid 等）驗證，在訓練階段完全不需要任何瑕疵樣本或標註。
-  * **高效演算法與部署**：結合 greedy k-center coreset 抽樣策略（保留 1% 關鍵特徵）與 **AOI** 產線級即時推論（支援 ONNX 部署量測、逐位置基線正規化與毫秒級熱力圖輸出），完美契合產線節拍。
-* **產線應用與價值**：
-  * **零標註負擔**：解決真實產線良品極多、瑕疵極少的不平衡痛點。
-  * **總品質成本最佳化**：將影像與像素級 AUROC 轉化為成本函數，動態計算出漏檢與過殺代價最低的最佳門檻。
- 
----
+### 🚀 Featured Projects
 
-### ⚡ 電力透視鏡 TW (GridLens TW)
+- **Industrial Anomaly Detection** — PatchCore-based defect detection using only normal samples, with ONNX inference optimization for AOI applications.
+- **GridLens TW** — Chinese natural-language-to-SQL query system for Taiwan electricity data, featuring SQL security validation and real-time generation monitoring.
+- **Brand Portal** — React-based brand website integrating automated data pipelines, Google Calendar synchronization, and deployment via Vercel.
 
-* **技術核心**：
-  * **自然語言處理與 Text2SQL 轉換**：運用 Python 與 FastAPI 打造智慧查詢後端，讓使用者直接透過中文提問自動轉譯為 SQL 語法，大幅降低電力數據的查詢門檻。
-  * **雙層資安守門機制**：整合 `sqlglot` 進行語法樹檢查（安全守門）與語意限制過濾（語意守門），確保查詢過程安全無虞並防止錯誤引導。
-  * **即時發電監控與收集器**：突破台電即時資料（d006001）無法回溯的限制，透過專屬收集器自動輪詢、封存並入庫至 SQLite，支援完整燈號與今日出力趨勢面板。
-* **專題應用與價值**：
-  * **中文智慧查詢**：解決「想查電力資料的人不會寫 SQL、懂資料庫的人難以掌握枯燥數據」的痛點，實現「問得出來、答得正確、用得安心」。
-  * **嚴謹的資料治理**：具備四眼審核原則、資料庫原子切換與雜湊鏈稽核紀錄，確保資料異動安全且可完整回溯。
+### 🛠️ Tech Stack
+
+`Python` `PyTorch` `Computer Vision` `FastAPI` `SQL` `React` `Vite` `Docker` `GitHub Actions`
 
 ---
 
-### 🌐 品牌總入口網站 V2.0 (Brand Portal)
+## 嗨！我是 Kayla 👋
 
-* **技術核心**：
-  * **前端架構與建置**：使用 React、Vite 建構前端，搭配 Tailwind CSS 自定義設計 Token 與 React Router 實作流暢的單頁式應用 (SPA) 路由。
-  * **自動化資料整合與排程**：透過 GitHub Actions 串連台東政府活動即時資料（每日自動抓取最新活動）與 Google 日曆（每小時自動同步產生即時空房資料），並部署至 Vercel 實現無後端的全自動資料管線。
-  * **高效能影像處理與無障礙優化**：撰寫專屬 Node.js 腳本將相機原檔自動批次壓縮並轉為 WebP 格式，全站嚴格遵循語意化標籤、鍵盤導航與無障礙規範。
-* **專案應用與價值**：
-  * **一站式品牌聯結與導購**：整合品牌首頁、度假小屋體驗中心、美食地圖、在地半/一日遊與交通指引，讓訪客透過 NFC 連結即可一目了然並快速前往各社群與訂房頁。
-  * **極致的維護體驗（資料與 UI 分離）**：所有內容與店家資訊皆獨立於資料夾中，讓非技術人員無需修改任何 React 元件即可輕鬆更新網站內容。
+專注於 AI 應用開發，涵蓋電腦視覺、智慧資料查詢與工作流程自動化，致力於將 AI 技術轉化為實用工具。
+
+### 🚀 代表專案
+
+- **工業瑕疵檢測** — 基於 PatchCore 的少樣本異常檢測，結合 ONNX 推論最佳化，探索 AOI 產線應用。
+- **電力透視鏡 GridLens TW** — 以自然語言查詢台灣電力資料，整合 Text2SQL、SQL 安全驗證與即時發電監控。
+- **品牌總入口網站 Brand Portal** — 使用 React 建置品牌整合網站，串接自動化資料管線、Google 日曆同步與 Vercel 部署。
+
+### 🛠️ 技術工具
+
+`Python` `PyTorch` `Computer Vision` `FastAPI` `SQL` `React` `Vite` `Docker` `GitHub Actions`
