@@ -21,7 +21,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - Built the local-LLM evaluation and answer-check retry loop: correct answers **7 → 10**, silent wrong answers **5 → 1**
 - Built the 10-minute realtime generation collector and Chinese queries over live data
 
-**Engineering Regulation Search & Compliance Checker**
+**[Engineering Regulation Search & Compliance Checker](https://github.com/kayla162/aoi-patchcore.git)**
 - Custom regulation index and multi-level parser that matches cited standards in engineering documents and exports audit reports
 
 **[Brand Portal](https://github.com/kayla162/brand-portal)** — [Live site](https://brand-portal-hxu.vercel.app/)
