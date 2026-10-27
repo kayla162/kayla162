@@ -63,7 +63,6 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - 開發每 10 分鐘的即時發電收集器，並支援以中文查詢即時資料
 
 **[工程法規智慧檢索與符合性檢查平台](https://github.com/kayla162/aoi-patchcore.git)**
-— 基於 PatchCore 的少樣本異常檢測，結合 CNN 特徵提取、Coreset 抽樣與 ONNX 推論最佳化，探索 AOI 產線應用。
 - 自建法規索引與多層次解析引擎，自動比對工程文件引用標準並匯出稽核報告
 
 **[品牌總入口網站](https://github.com/kayla162/brand-portal)** — [線上網站](https://brand-portal-hxu.vercel.app/)
