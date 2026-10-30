@@ -9,7 +9,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - Failed reviews trigger query rewriting and regeneration: off-palette area dropped from **38% to 2%**
 - Event-sourced FastAPI / PostgreSQL / Redis backend with cost caps, **1,000+ tests**, Docker Compose
 
-**[ShopPilot](https://github.com/kayla162/shoppilot)** — E-commerce product and competitor analysis
+**[ShopPilot](https://github.com/kayla162/ShopPilot-demo)** — E-commerce product and competitor analysis
 - Local **Qwen 2.5 1.5B** (Hugging Face Transformers) explains statistically computed results, switchable to OpenAI
 - Numeric-grounding guard blocks any number not found in the input; auto-graded Q&A benchmark scores **92% / 88%** on two real shops
 
@@ -50,7 +50,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - 審查不通過時自動改寫重生成，色系偏離從 **38% 降至 2%**
 - 事件溯源架構的 FastAPI / PostgreSQL / Redis 後端，具費用上限控管，共 **1,000+ 個測試**，以 Docker Compose 部署
 
-**[ShopPilot](https://github.com/kayla162/shoppilot)** — 電商商品競品與表現分析
+**[ShopPilot](https://github.com/kayla162/ShopPilot-demo)** — 電商商品競品與表現分析
 - 本機部署 **Qwen 2.5 1.5B**，將統計分析結果寫成白話建議，可切換至 OpenAI
 - 數字防捏造檢查攔截不在資料中的數字；自動評分的問答評測在兩家真實賣場達 **92% 與 88%**
 
