@@ -17,7 +17,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - Trained on good samples only: mean **image AUROC 0.987** across all 15 MVTec AD categories
 - Cost-optimal thresholds from escape vs. overkill costs; ONNX export runs **2.7× faster** on CPU
 
-**[GridLens TW](https://github.com/kayla162/gridlens-tw)** — Natural-language Text2SQL over Taipower open data *(team project)*
+**[GridLens TW](https://github.com/kayla162/gridlens-tw)** — Natural-language Text2SQL over Taipower open data *(In-depth development based on the original topic)*
 - Built the local-LLM evaluation and answer-check retry loop: correct answers **7 → 10**, silent wrong answers **5 → 1**
 - Built the 10-minute realtime generation collector and Chinese queries over live data
 
