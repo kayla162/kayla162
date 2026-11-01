@@ -58,7 +58,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - 只用良品訓練，在 MVTec AD 全部 15 個品項達 **平均 image AUROC 0.987**
 - 依漏檢與過殺成本推導最佳門檻；ONNX 匯出後 CPU 推論 **快 2.7 倍**
 
-**[電力透視鏡 GridLens TW](https://github.com/kayla162/gridlens-tw)** — 台電開放資料 Text2SQL 查詢系統（團隊專案）
+**[電力透視鏡 GridLens TW](https://github.com/kayla162/gridlens-tw)** — 台電開放資料 Text2SQL 查詢系統（基於原專題的深度開發）
 - 負責本機 LLM 評測與答案檢查重試機制：答對 **7 → 10**、隱性錯答 **5 → 1**
 - 開發每 10 分鐘的即時發電收集器，並支援以中文查詢即時資料
 
