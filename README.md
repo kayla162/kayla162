@@ -21,7 +21,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - Built the local-LLM evaluation and answer-check retry loop: correct answers **7 → 10**, silent wrong answers **5 → 1**
 - Built the 10-minute realtime generation collector and Chinese queries over live data
 
-**[Engineering Regulation Search & Compliance Checker](https://github.com/kayla162/aoi-patchcore.git)**
+**[Engineering Regulation Search & Compliance Checker](https://github.com/kayla162/Engineering-Quality)**
 - Custom regulation index and multi-level parser that matches cited standards in engineering documents and exports audit reports
 
 **[Brand Portal](https://github.com/kayla162/brand-portal)** — [Live site](https://brand-portal-hxu.vercel.app/)
@@ -62,7 +62,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - 負責本機 LLM 評測與答案檢查重試機制：答對 **7 → 10**、隱性錯答 **5 → 1**
 - 開發每 10 分鐘的即時發電收集器，並支援以中文查詢即時資料
 
-**[工程法規智慧檢索與符合性檢查平台](https://github.com/kayla162/aoi-patchcore.git)**
+**[工程法規智慧檢索與符合性檢查平台](https://github.com/kayla162/Engineering-Quality)**
 - 自建法規索引與多層次解析引擎，自動比對工程文件引用標準並匯出稽核報告
 
 **[品牌總入口網站](https://github.com/kayla162/brand-portal)** — [線上網站](https://brand-portal-hxu.vercel.app/)
