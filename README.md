@@ -4,10 +4,12 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 
 ### 🚀 Featured Projects
 
-**[GenAI Agent Studio](https://github.com/kayla162/genai-agent-studio)** — One-line brief to brand-compliant e-commerce posters
-- Gemini structured-output agent + brand-guideline RAG (BGE-M3 + reranker, int8 ONNX on CPU) + SDXL inpainting via ComfyUI + VLM compliance review
-- Failed reviews trigger query rewriting and regeneration: off-palette area dropped from **38% to 2%**
-- Event-sourced FastAPI / PostgreSQL / Redis backend with cost caps, **1,000+ tests**, Docker Compose
+**[GenAI Agent Studio](https://github.com/kayla162/genai-agent-studio)** — Brand-compliant e-commerce posters from a one-line brief
+
+- Multimodal agent: Plans copy and layout with Gemini structured output, grounded in a brand-guideline RAG (BGE-M3 + reranker, int8 ONNX), and generates backgrounds with SDXL inpainting on ComfyUI. The product photo stays untouched; only the background is regenerated.
+- Automated compliance review: Runs 8 rule-based checks and 3 VLM checks, and caught 30/30 deliberately planted typos. Failed posters are regenerated after query rewriting; in a fluorescent-color test case, off-palette area dropped from 38% to 2%.
+- Review and publishing automation: Uses n8n to connect batch generation from Google Sheets, review on LINE (approve, or reject with feedback) and publishing of the final poster to Cloudflare R2. Review decisions are written back into the RAG index as human-in-the-loop feedback.
+- Reliable backend: Event-sourced FastAPI / PostgreSQL / Redis backend. A transactional outbox with HMAC-signed webhooks makes sure no notification is lost, and spending caps limit API cost. Covered by 1,000+ tests and deployed with Docker Compose.
 
 **[ShopPilot](https://github.com/kayla162/ShopPilot-demo)** — E-commerce product and competitor analysis
 - Local **Qwen 2.5 1.5B** (Hugging Face Transformers) explains statistically computed results, switchable to OpenAI
@@ -45,10 +47,12 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 
 ### 🚀 代表專案
 
-**[虛實整合 GenAI Agent](https://github.com/kayla162/genai-agent-studio)** — 一句話生成品牌合規電商海報
-- Gemini 結構化輸出 Agent，串接品牌規範 RAG（BGE-M3 + Reranker，int8 ONNX）、ComfyUI 上的 SDXL inpainting 與 VLM 合規審查
-- 審查不通過時自動改寫重生成，色系偏離從 **38% 降至 2%**
-- 事件溯源架構的 FastAPI / PostgreSQL / Redis 後端，具費用上限控管，共 **1,000+ 個測試**，以 Docker Compose 部署
+**[虛實整合 GenAI Agent](https://github.com/kayla162/genai-agent-studio)** — 一句話需求生成品牌合規的電商海報
+
+- 多模態 Agent：以 Gemini 結構化輸出規劃文案與版面，串接品牌規範 RAG（BGE-M3＋Reranker，int8 ONNX）與 ComfyUI SDXL inpainting；商品保留原圖，只重繪背景
+- 自動合規審查：8 項規則＋3 項 VLM 檢查，植入的錯字 30/30 全數抓出；不通過時以 Query Rewriting 改寫重生成，螢光色需求案例的色系偏離由 38% 降至 2%
+- 審核與發布自動化：以 n8n 串接 Google Sheets 批次產圖、LINE 審核（核准／附意見退回）與 Cloudflare R2 定稿發布；審核結果回寫 RAG，形成人在迴圈的回饋學習
+- 可靠的後端：FastAPI／PostgreSQL／Redis 事件溯源架構，transactional outbox＋HMAC 簽章確保 webhook 不漏送，具費用上限控管；1,000+ 個測試，Docker Compose 部署
 
 **[ShopPilot](https://github.com/kayla162/ShopPilot-demo)** — 電商商品競品與表現分析
 - 本機部署 **Qwen 2.5 1.5B**，將統計分析結果寫成白話建議，可切換至 OpenAI
