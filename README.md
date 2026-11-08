@@ -11,7 +11,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - Review and publishing automation: Uses n8n to connect batch generation from Google Sheets, review on LINE (approve, or reject with feedback) and publishing of the final poster to Cloudflare R2. Review decisions are written back into the RAG index as human-in-the-loop feedback.
 - Reliable backend: Event-sourced FastAPI / PostgreSQL / Redis backend. A transactional outbox with HMAC-signed webhooks makes sure no notification is lost, and spending caps limit API cost. Covered by 1,000+ tests and deployed with Docker Compose.
 
-**[Engineering Regulation Compliance Platform](https://github.com/kayla162/Engineering-Quality)** — Verify cited regulations and ask legal questions with verifiable citations · [Summary](https://github.com/kayla162/Engineering-Quality/blob/master/docs/portfolio-en.md)
+**[Engineering Regulation Compliance Platform](https://github.com/kayla162/Engineering-Quality)** — Verify cited regulations and ask legal questions with verifiable citations · [Live demo](https://engineering-quality.vercel.app/) · [Summary](https://github.com/kayla162/Engineering-Quality/blob/master/docs/portfolio-en.md)
 
 - RAG Q&A with verified citations: Claude answers only from retrieved articles and must quote them verbatim; a program checks every quote against the source text. On the held-out set: **0 wrong answers**, **9/9 trap questions refused**, accuracy 50% → **75%** from better retrieval alone.
 - Hybrid search on pgvector: exact matching for article numbers and standard codes plus BGE-M3 vectors, stored in the existing PostgreSQL. Held-out **Recall@5 0.54 → 0.91**; the architecture was chosen by comparing four designs on a dev set, not by default.
@@ -64,7 +64,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - 審核與發布自動化：以 n8n 串接 Google Sheets 批次產圖、LINE 審核（核准／附意見退回）與 Cloudflare R2 定稿發布；審核結果回寫 RAG，形成人在迴圈的回饋學習
 - 可靠的後端：FastAPI／PostgreSQL／Redis 事件溯源架構，transactional outbox＋HMAC 簽章確保 webhook 不漏送，具費用上限控管；1,000+ 個測試，Docker Compose 部署
 
-**[工程法規符合性檢查平台](https://github.com/kayla162/Engineering-Quality)** — 查證文件引用的法規是否有效，並用口語問法規、得到可驗證出處的回答
+**[工程法規符合性檢查平台](https://github.com/kayla162/Engineering-Quality)** — 查證文件引用的法規是否有效，並用口語問法規、得到可驗證出處的回答 · [線上 demo](https://engineering-quality.vercel.app/)
 
 - 引用可驗證的 RAG 問答：Claude 只能根據檢索到的條文回答並逐字引用，程式逐條比對原文；保留測試集**錯誤答案 0**、陷阱題 **9/9 正確拒答**，只靠改善檢索就讓答對率由 50% 提升到 **75%**
 - pgvector 混合搜尋：條號、標準編號精確比對＋BGE-M3 向量，直接存在既有的 PostgreSQL；保留測試集 **Recall@5 0.54 → 0.91**，架構是在開發集上比較四種設計後才決定
