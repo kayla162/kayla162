@@ -19,8 +19,8 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - Measurable after launch: A monitoring tab tracks p50/p95 latency, cache hits and guard blocks. Sellers rate answers 👍/👎, and their real questions can be exported and re-run as an evaluation set. Covered by 686 tests in CI.
 
 **[Industrial Anomaly Detection](https://github.com/kayla162/aoi-patchcore)** — Few-shot AOI with PatchCore
-- Trained on good samples only: mean **image AUROC 0.987** across all 15 MVTec AD categories
-- Cost-optimal thresholds from escape vs. overkill costs; ONNX export runs **2.7× faster** on CPU
+- Trained on good samples only: mean **image AUROC 0.986** across all 15 MVTec AD categories
+- Cost-optimal thresholds from escape vs. overkill costs; ONNX export speeds up CPU feature extraction **2.7×**
 
 **[GridLens TW](https://github.com/kayla162/gridlens-tw)** — Ask Taiwan Power open data in Chinese: local-first Text2SQL with guardrails (Extensions) · [Live demo](https://gridlens-tw.onrender.com)
 
@@ -67,8 +67,8 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - 上線後可量測：監控分頁追蹤延遲 p50／p95、快取命中與攔截比例；賣家可對回答按 👍／👎，真實提問能匯出成評測集重跑；686 個測試在 CI 自動執行
 
 **[工業瑕疵檢測](https://github.com/kayla162/aoi-patchcore)** — PatchCore 少樣本 AOI 異常偵測
-- 只用良品訓練，在 MVTec AD 全部 15 個品項達 **平均 image AUROC 0.987**
-- 依漏檢與過殺成本推導最佳門檻；ONNX 匯出後 CPU 推論 **快 2.7 倍**
+- 只用良品訓練，MVTec AD 全 15 品項平均 **image AUROC 0.986**
+- 依漏檢與過殺成本推導最佳門檻；ONNX 匯出後 CPU 特徵提取 **快 2.7 倍**
 
 **[電力透視鏡 GridLens TW](https://github.com/kayla162/gridlens-tw)** — 用中文查台電開放資料的地端 Text2SQL（延伸開發）· [線上 demo](https://gridlens-tw.onrender.com)
 
