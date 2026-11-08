@@ -25,15 +25,15 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - Fast local inference: llama.cpp 4-bit quantization cuts CPU latency from 50 s to 3.6 s per answer, with token-by-token streaming.
 - Measurable after launch: A monitoring tab tracks p50/p95 latency, cache hits and guard blocks. Sellers rate answers 👍/👎, and their real questions can be exported and re-run as an evaluation set. Covered by 686 tests in CI.
 
-**[Industrial Anomaly Detection](https://github.com/kayla162/aoi-patchcore)** — Few-shot AOI with PatchCore
-- Trained on good samples only: mean **image AUROC 0.986** across all 15 MVTec AD categories
-- Cost-optimal thresholds from escape vs. overkill costs; ONNX export speeds up CPU feature extraction **2.7×**
-
 **[GridLens TW](https://github.com/kayla162/gridlens-tw)** — Ask Taiwan Power open data in Chinese: local-first Text2SQL with guardrails (Extensions) · [Live demo](https://gridlens-tw.onrender.com)
 
 - Guarded by design: rules first, a local LLM (Ollama qwen3:8b) for the long tail; an AST SQL guard and a semantic guard block 16/16 SQL attacks and refuse questions the data cannot answer.
 - Measured, not guessed: each fix round is scored on a fresh question set (14→21, 10→15, 15→20; pooled McNemar p ≈ 0.00002), and defaults were chosen by comparing 3 local models and 3 retrievers on 121 questions.
 - Agent-ready: an MCP server lets Claude query the data in Chinese. Agents send questions, never SQL, so every query passes the same guards.
+
+**[Industrial Anomaly Detection](https://github.com/kayla162/aoi-patchcore)** — Few-shot AOI with PatchCore
+- Trained on good samples only: mean **image AUROC 0.986** across all 15 MVTec AD categories
+- Cost-optimal thresholds from escape vs. overkill costs; ONNX export speeds up CPU feature extraction **2.7×**
 
 **[Brand Portal](https://github.com/kayla162/brand-portal)** — [Live site](https://brand-portal-hxu.vercel.app/)
 - One NFC tap links all three brands, with a guest hub for the vacation cabin: food, sights, itineraries, and room availability
@@ -78,15 +78,15 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - 本機快速推論：llama.cpp 4-bit 量化讓 CPU 每題從 50 秒降到 3.6 秒，回答逐字串流顯示
 - 上線後可量測：監控分頁追蹤延遲 p50／p95、快取命中與攔截比例；賣家可對回答按 👍／👎，真實提問能匯出成評測集重跑；686 個測試在 CI 自動執行
 
-**[工業瑕疵檢測](https://github.com/kayla162/aoi-patchcore)** — PatchCore 少樣本 AOI 異常偵測
-- 只用良品訓練，MVTec AD 全 15 品項平均 **image AUROC 0.986**
-- 依漏檢與過殺成本推導最佳門檻；ONNX 匯出後 CPU 特徵提取 **快 2.7 倍**
-
 **[電力透視鏡 GridLens TW](https://github.com/kayla162/gridlens-tw)** — 用中文查台電開放資料的地端 Text2SQL（延伸開發）· [線上 demo](https://gridlens-tw.onrender.com)
 
 - 守門優先：規則先接、本機 LLM（Ollama qwen3:8b）補長尾；語法樹與語意雙層守門，SQL 攻擊 16/16 攔截，資料答不出的問題直接拒答並建議問法
 - 用數據說話：每輪先寫新題庫再修正，三輪答對 14→21、10→15、15→20（McNemar 合計 p ≈ 0.00002）；三個本機模型、三種檢索方式在 121 題上逐題比較後才定預設
 - 給 AI 代理用：MCP server 讓 Claude 用中文查詢；代理只能送問題、不能送 SQL，一律經過同樣的守門
+
+**[工業瑕疵檢測](https://github.com/kayla162/aoi-patchcore)** — PatchCore 少樣本 AOI 異常偵測
+- 只用良品訓練，MVTec AD 全 15 品項平均 **image AUROC 0.986**
+- 依漏檢與過殺成本推導最佳門檻；ONNX 匯出後 CPU 特徵提取 **快 2.7 倍**
 
 **[品牌總入口網站](https://github.com/kayla162/brand-portal)** — [線上網站](https://brand-portal-hxu.vercel.app/)
 - 一張 NFC 卡串起三個品牌，並為度假小屋住客提供美食、景點、行程與空房查詢
