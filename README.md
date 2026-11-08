@@ -28,8 +28,12 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - Measured, not guessed: each fix round is scored on a fresh question set (14→21, 10→15, 15→20; pooled McNemar p ≈ 0.00002), and defaults were chosen by comparing 3 local models and 3 retrievers on 121 questions.
 - Agent-ready: an MCP server lets Claude query the data in Chinese. Agents send questions, never SQL, so every query passes the same guards.
 
-**[Engineering Regulation Search & Compliance Checker](https://github.com/kayla162/Engineering-Quality)**
-- Custom regulation index and multi-level parser that matches cited standards in engineering documents and exports audit reports
+**[Engineering Regulation Compliance Platform](https://github.com/kayla162/Engineering-Quality)** — Verify cited regulations and ask legal questions with verifiable citations · [Summary](https://github.com/kayla162/Engineering-Quality/blob/master/docs/portfolio-en.md)
+
+- RAG Q&A with verified citations: Claude answers only from retrieved articles and must quote them verbatim; a program checks every quote against the source text. On the held-out set: **0 wrong answers**, **9/9 trap questions refused**, accuracy 50% → **75%** from better retrieval alone.
+- Hybrid search on pgvector: exact matching for article numbers and standard codes plus BGE-M3 vectors, stored in the existing PostgreSQL. Held-out **Recall@5 0.54 → 0.91**; the architecture was chosen by comparing four designs on a dev set, not by default.
+- Model choice by error type: compared Opus, Sonnet and Haiku at several effort levels on the same questions; kept Opus because Sonnet turned a mandatory "shall" into "may" — a legal error quote-checking cannot catch.
+- Reads real engineering documents: OCR on scanned contract drawings raised drawing-number accuracy from **35% to 92%**, cutting items to check by hand from 312 to 30. Covered by 1,000+ tests in CI.
 
 **[Brand Portal](https://github.com/kayla162/brand-portal)** — [Live site](https://brand-portal-hxu.vercel.app/)
 - One NFC tap links all three brands, with a guest hub for the vacation cabin: food, sights, itineraries, and room availability
@@ -37,7 +41,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 
 ### 🛠️ Tech Stack
 
-**LLM & RAG** `Gemini` `OpenAI` `Hugging Face` `PEFT / QLoRA` `llama.cpp` `Ollama` `BGE-M3` `Reranker` `Chroma`
+**LLM & RAG** `Claude` `Gemini` `OpenAI` `Hugging Face` `PEFT / QLoRA` `llama.cpp` `Ollama` `BGE-M3` `pgvector` `Reranker` `Chroma`
 
 **Vision & Deployment** `PyTorch` `SDXL` `ComfyUI` `ONNX Runtime` `PatchCore`
 
@@ -77,8 +81,12 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - 用數據說話：每輪先寫新題庫再修正，三輪答對 14→21、10→15、15→20（McNemar 合計 p ≈ 0.00002）；三個本機模型、三種檢索方式在 121 題上逐題比較後才定預設
 - 給 AI 代理用：MCP server 讓 Claude 用中文查詢；代理只能送問題、不能送 SQL，一律經過同樣的守門
 
-**[工程法規智慧檢索與符合性檢查平台](https://github.com/kayla162/Engineering-Quality)**
-- 自建法規索引與多層次解析引擎，自動比對工程文件引用標準並匯出稽核報告
+**[工程法規符合性檢查平台](https://github.com/kayla162/Engineering-Quality)** — 查證文件引用的法規是否有效，並用口語問法規、得到可驗證出處的回答
+
+- 引用可驗證的 RAG 問答：Claude 只能根據檢索到的條文回答並逐字引用，程式逐條比對原文；保留測試集**錯誤答案 0**、陷阱題 **9/9 正確拒答**，只靠改善檢索就讓答對率由 50% 提升到 **75%**
+- pgvector 混合搜尋：條號、標準編號精確比對＋BGE-M3 向量，直接存在既有的 PostgreSQL；保留測試集 **Recall@5 0.54 → 0.91**，架構是在開發集上比較四種設計後才決定
+- 依錯誤性質選模型：同題比較 Opus、Sonnet、Haiku 與不同 effort，Sonnet 會把條文的「應」改寫成「得」，引文驗證擋不到這種錯誤，因此維持 Opus
+- 讀得懂真實工程文件：掃描契約圖 OCR 的圖號辨識率由 **35% 提升到 92%**，待人工確認的工項由 312 筆降到 30 筆；1,000 多個測試在 CI 上自動執行
 
 **[品牌總入口網站](https://github.com/kayla162/brand-portal)** — [線上網站](https://brand-portal-hxu.vercel.app/)
 - 一張 NFC 卡串起三個品牌，並為度假小屋住客提供美食、景點、行程與空房查詢
@@ -86,7 +94,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 
 ### 🛠️ 技術工具
 
-**LLM 與 RAG** `Gemini` `OpenAI` `Hugging Face` `PEFT / QLoRA` `llama.cpp` `Ollama` `BGE-M3` `Reranker` `Chroma`
+**LLM 與 RAG** `Claude` `Gemini` `OpenAI` `Hugging Face` `PEFT / QLoRA` `llama.cpp` `Ollama` `BGE-M3` `pgvector` `Reranker` `Chroma`
 
 **視覺與部署** `PyTorch` `SDXL` `ComfyUI` `ONNX Runtime` `PatchCore`
 
