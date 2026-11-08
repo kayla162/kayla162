@@ -32,7 +32,8 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - Custom regulation index and multi-level parser that matches cited standards in engineering documents and exports audit reports
 
 **[Brand Portal](https://github.com/kayla162/brand-portal)** — [Live site](https://brand-portal-hxu.vercel.app/)
-- React + Vite site on Vercel; GitHub Actions schedules sync events (TDX API) and room availability (iCal)
+- One NFC tap links all three brands, with a guest hub for the vacation cabin: food, sights, itineraries, and room availability
+- Built with React + Vite and deployed on Vercel; GitHub Actions schedules sync events (TDX API) and room availability (iCal)
 
 ### 🛠️ Tech Stack
 
@@ -80,6 +81,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - 自建法規索引與多層次解析引擎，自動比對工程文件引用標準並匯出稽核報告
 
 **[品牌總入口網站](https://github.com/kayla162/brand-portal)** — [線上網站](https://brand-portal-hxu.vercel.app/)
+- 一張 NFC 卡串起三個品牌，並為度假小屋住客提供美食、景點、行程與空房查詢
 - 以 React + Vite 建置並部署至 Vercel，透過 GitHub Actions 排程同步活動（TDX API）與房況（iCal）
 
 ### 🛠️ 技術工具
