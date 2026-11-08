@@ -11,9 +11,12 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - Review and publishing automation: Uses n8n to connect batch generation from Google Sheets, review on LINE (approve, or reject with feedback) and publishing of the final poster to Cloudflare R2. Review decisions are written back into the RAG index as human-in-the-loop feedback.
 - Reliable backend: Event-sourced FastAPI / PostgreSQL / Redis backend. A transactional outbox with HMAC-signed webhooks makes sure no notification is lost, and spending caps limit API cost. Covered by 1,000+ tests and deployed with Docker Compose.
 
-**[ShopPilot](https://github.com/kayla162/ShopPilot-demo)** — E-commerce product and competitor analysis
-- Local **Qwen 2.5 1.5B** (Hugging Face Transformers) explains statistically computed results, switchable to OpenAI
-- Numeric-grounding guard blocks any number not found in the input; auto-graded Q&A benchmark scores **92% / 88%** on two real shops
+**[ShopPilot](https://github.com/kayla162/ShopPilot-demo)** — Shopee seller analytics with a fine-tuned local LLM · [Live demo](https://shoppilot-demo-fqegbgf2rvzuah3tzjhqqt.streamlit.app/) · [Model](https://huggingface.co/kayla162/shoppilot-qwen2.5-1.5b-tools-lora)
+
+- Tool calling with a 1.5B model: Sellers ask questions in Chinese, and a local Qwen 2.5 1.5B calls 7 query tools to find the answer. A numeric-grounding guard blocks any number not found in the tool output.
+- QLoRA fine-tuning: Trained on program-generated trajectories on a 6 GB laptop GPU in 44 minutes. On the same 4-bit model, accuracy rose from 59% to 96% on 141 auto-graded questions (McNemar p < 1e-11), on par with a 5× larger Qwen3 8B. The release was chosen from three data versions by failure mode, and the adapter is published on Hugging Face as PEFT and GGUF weights.
+- Fast local inference: llama.cpp 4-bit quantization cuts CPU latency from 50 s to 3.6 s per answer, with token-by-token streaming.
+- Measurable after launch: A monitoring tab tracks p50/p95 latency, cache hits and guard blocks. Sellers rate answers 👍/👎, and their real questions can be exported and re-run as an evaluation set. Covered by 686 tests in CI.
 
 **[Industrial Anomaly Detection](https://github.com/kayla162/aoi-patchcore)** — Few-shot AOI with PatchCore
 - Trained on good samples only: mean **image AUROC 0.987** across all 15 MVTec AD categories
@@ -34,7 +37,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 
 ### 🛠️ Tech Stack
 
-**LLM & RAG** `Gemini` `OpenAI` `Hugging Face` `Ollama` `BGE-M3` `Reranker` `Chroma`
+**LLM & RAG** `Gemini` `OpenAI` `Hugging Face` `PEFT / QLoRA` `llama.cpp` `Ollama` `BGE-M3` `Reranker` `Chroma`
 
 **Vision & Deployment** `PyTorch` `SDXL` `ComfyUI` `ONNX Runtime` `PatchCore`
 
@@ -57,9 +60,12 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - 審核與發布自動化：以 n8n 串接 Google Sheets 批次產圖、LINE 審核（核准／附意見退回）與 Cloudflare R2 定稿發布；審核結果回寫 RAG，形成人在迴圈的回饋學習
 - 可靠的後端：FastAPI／PostgreSQL／Redis 事件溯源架構，transactional outbox＋HMAC 簽章確保 webhook 不漏送，具費用上限控管；1,000+ 個測試，Docker Compose 部署
 
-**[ShopPilot](https://github.com/kayla162/ShopPilot-demo)** — 電商商品競品與表現分析
-- 本機部署 **Qwen 2.5 1.5B**，將統計分析結果寫成白話建議，可切換至 OpenAI
-- 數字防捏造檢查攔截不在資料中的數字；自動評分的問答評測在兩家真實賣場達 **92% 與 88%**
+**[ShopPilot](https://github.com/kayla162/ShopPilot-demo)** — 微調本機 LLM 的蝦皮賣家分析工具 · [線上 demo](https://shoppilot-demo-fqegbgf2rvzuah3tzjhqqt.streamlit.app/) · [模型](https://huggingface.co/kayla162/shoppilot-qwen2.5-1.5b-tools-lora)
+
+- 1.5B 模型的工具呼叫：賣家用中文提問，本機 Qwen 2.5 1.5B 自己呼叫 7 個查詢工具找答案；數字防捏造檢查攔下工具回傳裡沒有的數字
+- QLoRA 微調：用程式產生的訓練資料，在 6 GB 筆電顯示卡上訓練 44 分鐘；同一個 4-bit 模型在 141 題自動評分的題目上，答對率從 59% 提升到 96%（McNemar p < 1e-11），和 5 倍大的 Qwen3 8B 相當；從三版訓練資料中依答錯的方式選出發布版本，以 PEFT 和 GGUF 格式公開在 Hugging Face
+- 本機快速推論：llama.cpp 4-bit 量化讓 CPU 每題從 50 秒降到 3.6 秒，回答逐字串流顯示
+- 上線後可量測：監控分頁追蹤延遲 p50／p95、快取命中與攔截比例；賣家可對回答按 👍／👎，真實提問能匯出成評測集重跑；686 個測試在 CI 自動執行
 
 **[工業瑕疵檢測](https://github.com/kayla162/aoi-patchcore)** — PatchCore 少樣本 AOI 異常偵測
 - 只用良品訓練，在 MVTec AD 全部 15 個品項達 **平均 image AUROC 0.987**
@@ -80,7 +86,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 
 ### 🛠️ 技術工具
 
-**LLM 與 RAG** `Gemini` `OpenAI` `Hugging Face` `Ollama` `BGE-M3` `Reranker` `Chroma`
+**LLM 與 RAG** `Gemini` `OpenAI` `Hugging Face` `PEFT / QLoRA` `llama.cpp` `Ollama` `BGE-M3` `Reranker` `Chroma`
 
 **視覺與部署** `PyTorch` `SDXL` `ComfyUI` `ONNX Runtime` `PatchCore`
 
