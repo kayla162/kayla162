@@ -4,7 +4,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 
 ### 🚀 Featured Projects
 
-**[GenAI Agent Studio](https://github.com/kayla162/genai-agent-studio)** — Brand-compliant e-commerce posters from a one-line brief
+**[GenAI Agent Studio](https://github.com/kayla162/genai-agent-studio)** — Brand-compliant e-commerce posters from a one-line brief· [demo](https://genai-agent-studio.kayla-swag-19.workers.dev/studio) 
 
 - Multimodal agent: Plans copy and layout with Gemini structured output, grounded in a brand-guideline RAG (BGE-M3 + reranker, int8 ONNX), and generates backgrounds with SDXL inpainting on ComfyUI. The product photo stays untouched; only the background is regenerated.
 - Automated compliance review: Runs 8 rule-based checks and 3 VLM checks, and caught 30/30 deliberately planted typos. Failed posters are regenerated after query rewriting; in a fluorescent-color test case, off-palette area dropped from 38% to 2%.
@@ -53,7 +53,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 
 ### 🚀 代表專案
 
-**[虛實整合 GenAI Agent](https://github.com/kayla162/genai-agent-studio)** — 一句話需求生成品牌合規的電商海報
+**[虛實整合 GenAI Agent](https://github.com/kayla162/genai-agent-studio)** — 一句話需求生成品牌合規的電商海報· [線上 demo](https://genai-agent-studio.kayla-swag-19.workers.dev/studio) 
 
 - 多模態 Agent：以 Gemini 結構化輸出規劃文案與版面，串接品牌規範 RAG（BGE-M3＋Reranker，int8 ONNX）與 ComfyUI SDXL inpainting；商品保留原圖，只重繪背景
 - 自動合規審查：8 項規則＋3 項 VLM 檢查，植入的錯字 30/30 全數抓出；不通過時以 Query Rewriting 改寫重生成，螢光色需求案例的色系偏離由 38% 降至 2%
