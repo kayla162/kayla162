@@ -19,7 +19,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - Trained on good samples only: mean **image AUROC 0.987** across all 15 MVTec AD categories
 - Cost-optimal thresholds from escape vs. overkill costs; ONNX export runs **2.7× faster** on CPU
 
-**[GridLens TW](https://github.com/kayla162/gridlens-tw)** — local-first Text2SQL over Taiwan Power Company open data (in-depth extension of an earlier project)
+**[GridLens TW](https://github.com/kayla162/gridlens-tw)** — local-first Text2SQL over Taiwan Power Company open data (Extensions)
 
 - Built the local-LLM evaluation and fixes: each round is scored on a question set written before the changes. Accuracy rose 14→21, 10→15 and 15→20 over three rounds, and McNemar tests confirm the gain is not noise (pooled p ≈ 0.00002).
 - Chose the defaults from data: compared 3 local models and n-gram vs. embedding retrieval, question by question on the same 121 questions.
@@ -65,7 +65,7 @@ AI application developer focused on turning LLMs, RAG and computer vision into r
 - 只用良品訓練，在 MVTec AD 全部 15 個品項達 **平均 image AUROC 0.987**
 - 依漏檢與過殺成本推導最佳門檻；ONNX 匯出後 CPU 推論 **快 2.7 倍**
 
-**[電力透視鏡 GridLens TW](https://github.com/kayla162/gridlens-tw)** — 台電開放資料的地端 Text2SQL 查詢系統（基於原專題的深度開發）
+**[電力透視鏡 GridLens TW](https://github.com/kayla162/gridlens-tw)** — 台電開放資料的地端 Text2SQL 查詢系統（延伸開發）
 
 - 負責本機 LLM 評測與改善：每輪先寫新題庫再修正，三輪答對 14→21、10→15、15→20，並以 McNemar 檢定確認不是運氣（三輪合計 p ≈ 0.00002）
 - 用數據選型：三個本機模型、n-gram 與 embedding 兩種檢索，在 121 題上逐題配對比較後才定預設
